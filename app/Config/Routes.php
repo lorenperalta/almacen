@@ -38,6 +38,12 @@ $routes->get('/Almacen/obtener/(:any)', 'AlmacenController::obtener/$1');
 $routes->post('/Almacen/actualizar', 'AlmacenController::actualizar');
 $routes->get('/Almacen/eliminar/(:any)', 'AlmacenController::eliminar/$1');
 
+$routes->get('/Secciones/(:any)', 'SeccionesController::index/$1');
+$routes->post('/Secciones/crear', 'SeccionesController::crear');
+$routes->get('/Secciones/obtener/(:any)', 'SeccionesController::obtener/$1');
+$routes->post('/Secciones/actualizar', 'SeccionesController::actualizar');
+$routes->get('/Secciones/eliminar/(:any)', 'SeccionesController::eliminar/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
