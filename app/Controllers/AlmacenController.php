@@ -28,7 +28,13 @@ class AlmacenController extends BaseController
         ];
 
         $almacen = new AlmacenModel();
-        $almacen->insertar($datos);
+        $respuesta = $almacen->insertar($datos);
+
+        if ($respuesta) {
+            return redirect()->to(base_url() . '/Almacen')->with('mensaje', '1');
+        } else {
+            return redirect()->to(base_url() . '/Almacen')->with('mensaje', '0');
+        }
     }
 
     public function actualizar()
