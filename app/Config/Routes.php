@@ -32,6 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/Almacen', 'AlmacenController::index');
+$routes->post('/Almacen/crear', 'AlmacenController::crear');
+$routes->get('/Almacen/obtener/(:any)', 'AlmacenController::obtener/$1');
+$routes->post('/Almacen/actualizar', 'AlmacenController::actualizar');
+$routes->get('/Almacen/eliminar/(:any)', 'AlmacenController::eliminar/$1');
 
 /*
  * --------------------------------------------------------------------
