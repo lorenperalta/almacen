@@ -33,17 +33,16 @@ $nombreDelAlmacen = $dbAlmacen[0]['nombreDelAlmacen'];
         </div>
     </div>
 </form>
-<table class="table table-hover table-bordered">
-    <tr>
+<table class="table  table-hover table-bordered">
+    <tr class="table-dark">
         <th>Id de seccion</th>
-        <th>Id del almacen</th>
         <th>Nombre del seccion</th>
         <th>Descripcion</th>
+        <th>Acciones</th>
     </tr>
     <?php foreach ($datos as $key) : ?>
     <tr>
         <td><?php echo $key->idSeccion ?></td>
-        <td><?php echo $key->idAlmacen ?></td>
         <td><?php echo $key->nombreSeccion ?></td>
         <td><?php echo $key->descripcion ?></td>
         <td>
