@@ -52,6 +52,12 @@ $routes->get('/Secciones/obtener/(:any)', 'SeccionesController::obtener/$1');
 $routes->post('/Secciones/actualizar', 'SeccionesController::actualizar');
 $routes->get('/Secciones/eliminar/(:any)', 'SeccionesController::eliminar/$1');
 
+$routes->get('/Movimientos', 'MovimientosController::index');
+$routes->post('/Movimientos/crear', 'MovimientosController::crear');
+$routes->get('/Movimientos/obtener/(:any)', 'MovimientosController::obtener/$1');
+$routes->post('/Movimientos/actualizar', 'MovimientosController::actualizar');
+$routes->get('/Movimientos/eliminar/(:any)', 'MovimientosController::eliminar/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
