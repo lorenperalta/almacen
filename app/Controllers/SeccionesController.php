@@ -17,7 +17,7 @@ class SeccionesController extends BaseController
         $consulta = ["id_almacen" => $id];
 
         $dbAlmacen = $almacen->obtenerDatos($consulta);
-        $datos = $seccion->ListarById($id);
+        $datos = $seccion->poralmacen($id);
 
         $mensaje = session('mensaje');
         $data = [
@@ -60,9 +60,9 @@ class SeccionesController extends BaseController
         $respuesta = $seccion->actualizar($datos, $idSeccion);
 
         if ($respuesta) {
-            return redirect()->to(base_url() . '/Secciones')->with('mensaje', '2');
+            return redirect()->to(base_url() . '/Secciones/'. $_POST['idAlmacen'])->with('mensaje', '2');
         } else {
-            return redirect()->to(base_url() . '/Secciones')->with('mensaje', '3');
+            return redirect()->to(base_url() . '/Secciones/'. $_POST['idAlmacen'])->with('mensaje', '3');
         }
     }
 

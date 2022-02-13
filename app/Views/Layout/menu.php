@@ -48,7 +48,7 @@
             Producto
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Crear</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>/Producto">Crear</a></li>
             <li><a class="dropdown-item" href="#">Ingresar</a></li>
             <li><a class="dropdown-item" href="#">Venta</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -57,13 +57,13 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Usuario
+            Movimiento
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <?php foreach (session('MenuDashboardCliente')as $key): ?>
+            <li><a class="dropdown-item" href="<?php echo base_url()?>/Almacenes/<?php echo $key -> id_almacen?>"><?php echo $key -> nombreDelAlmacen?></a></li>
+            <?php endforeach; ?>
+            
           </ul>
         </li>
         <li class="nav-item dropdown">

@@ -12,6 +12,11 @@ class SeccionesModel extends Model
         $seccion = $this->db->query("SELECT * FROM tb_secciones");
         return $seccion->getresult();
     }
+    public function poralmacen($id_alamacen)
+    {
+        $seccion = $this->db->query("SELECT * FROM tb_secciones where idAlmacen= $id_alamacen");
+        return $seccion->getresult();
+    }
 
     public function ListarById($id)
     {
