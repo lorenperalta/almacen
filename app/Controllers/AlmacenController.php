@@ -65,6 +65,16 @@ class AlmacenController extends BaseController
 
         return view('Almacen/actualizar', $datos);
     }
+    public function alm($idAlmacen)
+    {
+        $data = ["id_almacen" => $idAlmacen];
+        $almacen = new AlmacenModel();
+        $respuesta = $almacen->obtenerDatos($data);
+
+        $datos = ["datos" => $respuesta];
+
+        return view('Almacen/gestion', $datos);
+    }
 
     public function eliminar($idAlmacen)
     {

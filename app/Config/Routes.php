@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/Almacen', 'AlmacenController::index');
+$routes->get('/Almacenes/(:any)', 'AlmacenController::alm/$1');
 $routes->post('/Almacen/crear', 'AlmacenController::crear');
 $routes->get('/Almacen/obtener/(:any)', 'AlmacenController::obtener/$1');
 $routes->post('/Almacen/actualizar', 'AlmacenController::actualizar');
@@ -42,13 +43,13 @@ $routes->get('/Almacen/eliminar/(:any)', 'AlmacenController::eliminar/$1');
 
 $routes->get('/Producto', 'ProductoController::index');
 $routes->post('/Producto/crear', 'ProductoController::crear');
-$routes->get('/Producto/obtener/(:any)', 'ProductoController::obtener/$1');
+$routes->get('/Producto//(:any)', 'ProductoController::obtener/$1');
 $routes->post('/Producto/actualizar', 'ProductoController::actualizar');
 $routes->get('/Producto/eliminar/(:any)', 'ProductoController::eliminar/$1');
 
 $routes->get('/Secciones/(:any)', 'SeccionesController::index/$1');
 $routes->post('/Secciones/crear', 'SeccionesController::crear');
-$routes->get('/Secciones/obtener/(:any)', 'SeccionesController::obtener/$1');
+$routes->get('/Seccion/obtener/(:any)', 'SeccionesController::obtener/$1');
 $routes->post('/Secciones/actualizar', 'SeccionesController::actualizar');
 $routes->get('/Secciones/eliminar/(:any)', 'SeccionesController::eliminar/$1');
 

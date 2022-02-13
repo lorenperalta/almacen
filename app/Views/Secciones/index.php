@@ -15,7 +15,7 @@ $nombreDelAlmacen = $dbAlmacen[0]['nombreDelAlmacen'];
                 <label for="idSeccion">idSeccion</label>
                 <input type="number" name="idSeccion" id="idSeccion" class="form-control">
             </div><br>
-            <div>
+            <div hidden>
                 <label for="idAlmacen">idAlmacen</label>
                 <input type="number" name="idAlmacen" id="idAlmacen" class="form-control" value="<?php echo $idAlm ?>">
             </div><br>
@@ -33,21 +33,20 @@ $nombreDelAlmacen = $dbAlmacen[0]['nombreDelAlmacen'];
         </div>
     </div>
 </form>
-<table class="table table-hover table-bordered">
-    <tr>
+<table class="table  table-hover table-bordered">
+    <tr class="table-dark">
         <th>Id de seccion</th>
-        <th>Id del almacen</th>
         <th>Nombre del seccion</th>
         <th>Descripcion</th>
+        <th>Acciones</th>
     </tr>
     <?php foreach ($datos as $key) : ?>
     <tr>
         <td><?php echo $key->idSeccion ?></td>
-        <td><?php echo $key->idAlmacen ?></td>
         <td><?php echo $key->nombreSeccion ?></td>
         <td><?php echo $key->descripcion ?></td>
         <td>
-            <a href="<?php echo base_url() . '/Secciones/obtener/' . $key->idSeccion ?>"
+            <a href="<?php echo base_url() . '/Seccion/obtener/' . $key->idSeccion ?>"
                 class="btn btn-warning btn-sm">Editar</a>
             <a class="btn btn-success btn-sm">Reportes</a>
             <a href="<?php echo base_url() . '/Secciones/eliminar/' . $key->idSeccion ?>"
