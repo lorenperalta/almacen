@@ -9,7 +9,7 @@ use App\Models\SeccionesModel;
 class MovimientosController extends BaseController
 {
 
-    public function index()
+    public function index($idalmacen,$movimiento)
     {
         $movimientos = new MovimientosModel();
         $productos = new ProductoModel();
@@ -26,6 +26,8 @@ class MovimientosController extends BaseController
             "mensaje" => $mensaje,
             "dbProductos" => $dbProductos,
             "dbsecciones" => $dbsecciones,
+            "pmovimiento" => $movimiento,
+            "pidalmacen" => $idalmacen,
         ];
         return view('Movimientos/index', $data);
     }
@@ -33,7 +35,7 @@ class MovimientosController extends BaseController
     public function crear()
     {
         $datos = [
-            "id_almacen" => 1,
+            "id_almacen" => $_POST['id_almacen'],
             "id_seccion" => $_POST['id_seccion'],
             "id_producto" => $_POST['id_producto'],
             "cliente" => $_POST['cliente'],
@@ -42,16 +44,16 @@ class MovimientosController extends BaseController
             "concepto" => $_POST['concepto'],
             "precio" => $_POST['precio'],
             "fecha" => $_POST['fecha'],
-            "movimiento" => 'ingreso',
+            "movimiento" => $_POST['movimiento'],
         ];
 
         $movimientos = new MovimientosModel();
         $respuesta = $movimientos->insertar($datos);
 
         if ($respuesta) {
-            return redirect()->to(base_url() . '/Movimientos')->with('mensaje', '1');
+            return redirect()->to(base_url() . '/Almacenes/'.$_POST['id_almacen'])->with('mensaje', '1');
         } else {
-            return redirect()->to(base_url() . '/Movimientos')->with('mensaje', '0');
+            return redirect()->to(base_url() . '/Almacenes/'.$_POST['id_almacen'])->with('mensaje', '0');
         }
         // if ($respuesta) {
         //     return redirect()->to(base_url() . '/Movimientos')->with('mensaje', '1');

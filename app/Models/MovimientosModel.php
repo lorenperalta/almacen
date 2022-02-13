@@ -12,7 +12,12 @@ class MovimientosModel extends Model
         $seccion = $this->db->query("SELECT * FROM tb_movimientos");
         return $seccion->getresult();
     }
-
+    public function listarpro($idalmacen)
+    {
+        $seccion = $this->db->query("SELECT * FROM `tb_movimientos` inner join tb_producto on tb_producto.id_producto=tb_movimientos.id_producto where tb_movimientos.id_almacen=$idalmacen");
+        return $seccion->getresult();
+    }
+    
     public function ListarById($id)
     {
         $seccion = $this->db->query("SELECT * FROM tb_movimientos WHERE id_movimiento = $id");

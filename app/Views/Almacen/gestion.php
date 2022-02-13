@@ -6,8 +6,8 @@ $descripcion = $datos[0]['descripcion']; ?>
 <br>
 <h1>Alamacen - <?php echo $nombreDelAlmacen ?></h1>
 <div class="row">
-    <div class="col-sm-2"><a href="a"><button class="btn btn-primary">Ingresar</button></a></div>
-    <div class="col-sm-2"><a href="a"><button class="btn btn-success">Salida</button></a></div>
+    <div class="col-sm-2"><a href="<?php echo base_url() . '/Movimientos/' . $id_almacen.'/entrada' ?>"><button class="btn btn-primary">Ingresar</button></a></div>
+    <div class="col-sm-2"><a href="<?php echo base_url() . '/Movimientos/' . $id_almacen.'/salida' ?>"><button class="btn btn-success">Salida</button></a></div>
     <div class="col-sm-2"><a href="a"><button class="btn btn-info">sirve</button></a></div>
     <div class="col-sm-2"><a href="a"><button class="btn btn-warning">no sirve</button></a></div>
    
@@ -28,8 +28,27 @@ $descripcion = $datos[0]['descripcion']; ?>
         <th>cantidad</th>
         <th>Acciones</th>
     </tr>
-    
+    <?php foreach ($dbmov as $key) : ?>
+    <tr>
+        <td><?php echo $key->id_almacen ?></td>
+        <td><?php echo $key->fecha ?></td>
+        <td><?php echo $key->cliente ?></td>
+        <td><?php echo $key->movimiento ?></td>
+        <td><?php echo $key->nombreproducto ?></td>
+        <td><?php echo $key->unidad ?></td>
+        <td><?php echo $key->cantidad ?></td>
+        <td>
+            <a href="<?php echo base_url() . '/Almacen/obtener/' . $key->id_almacen ?>"
+                class="btn btn-warning btn-sm">Editar</a>
+            <a href="<?php echo base_url() . '/Secciones/' . $key->id_almacen ?>"
+                class="btn btn-success btn-sm">Secciones</a>
+            <a href="<?php echo base_url() . '/Almacen/eliminar/' . $key->id_almacen ?>"
+                class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
 </table>
+
 </div>
 
 <?= $this->endSection() ?>

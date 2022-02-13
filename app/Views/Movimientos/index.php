@@ -4,18 +4,20 @@
 <form method="POST" action="<?php echo base_url() . '/Movimientos/crear' ?>">
     <div class="row">
         <div class="col-3">
-            <div>
-                <label for="id_almacen">id_almacen</label>
-                <input type="number" name="id_almacen" id="id_almacen" class="form-control">
-            </div><br>
-            <div>
+            <div >
+                
+                <input type="hidden" name="id_almacen" id="id_almacen" value="<?php echo $pidalmacen ?>" class="form-control">
+                <input type="hidden" name="movimiento" id="movimiento" value="<?php echo $pmovimiento ?>" class="form-control">
                 <label for="id_producto">Productos</label>
                 <select class="form-control" id="id_producto" name="id_producto">
                     <?php foreach ($dbProductos as $key) : ?>
-                    <option value=<?php echo  $key->id_producto ?>><?php echo  $key->nombreproducto ?>
+                    <option value=<?php echo  $key->id_producto ?>><?php echo  $key->nombreproducto ?>// cantidad 20
                     </option>
                     <?php endforeach; ?>
                 </select>
+            </div><br>
+            <div>
+                
             </div><br>
         </div>
         <div class="col-3">

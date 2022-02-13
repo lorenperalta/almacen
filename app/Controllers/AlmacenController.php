@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\AlmacenModel;
+use App\Models\MovimientosModel;
 
 class AlmacenController extends BaseController
 {
@@ -70,8 +71,13 @@ class AlmacenController extends BaseController
         $data = ["id_almacen" => $idAlmacen];
         $almacen = new AlmacenModel();
         $respuesta = $almacen->obtenerDatos($data);
+        $mov = new MovimientosModel();
+        $dbmov = $mov->listarpro($idAlmacen);
 
-        $datos = ["datos" => $respuesta];
+        $datos = [
+            "datos" => $respuesta,
+            "dbmov" => $dbmov,
+    ];
 
         return view('Almacen/gestion', $datos);
     }
