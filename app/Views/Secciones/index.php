@@ -29,7 +29,7 @@ $nombreDelAlmacen = $dbAlmacen[0]['nombreDelAlmacen'];
             </div><br>
             <div>
                 <button class="btn btn-warning">Guardar</button>
-            </div>
+            </div><br>
         </div>
     </div>
 </form>
@@ -48,7 +48,8 @@ $nombreDelAlmacen = $dbAlmacen[0]['nombreDelAlmacen'];
         <td>
             <a href="<?php echo base_url() . '/Seccion/obtener/' . $key->idSeccion ?>"
                 class="btn btn-warning btn-sm">Editar</a>
-            <a class="btn btn-success btn-sm">Reportes</a>
+            <a href="<?php echo base_url() . '/Reportes/' . $key->idAlmacen ?>"
+                class="btn btn-success btn-sm">Reportes</a>
             <a href="<?php echo base_url() . '/Secciones/eliminar/' . $key->idSeccion ?>"
                 class="btn btn-danger btn-sm">Eliminar</a>
         </td>
