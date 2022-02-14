@@ -21,6 +21,7 @@ $descripcion = $datos[0]['descripcion'];
             <th>Producto</th>
             <th>unidad</th>
             <th>cantidad</th>
+            <th>Acciones</th>
         </tr>
         <?php foreach ($dbmov as $key) : ?>
         <tr>
@@ -28,6 +29,10 @@ $descripcion = $datos[0]['descripcion'];
             <td><?php echo $key->nombreproducto ?></td>
             <td><?php echo $key->unidad ?></td>
             <td><?php echo $key->total ?></td>
+            <td>
+                <a href="<?php echo base_url() . '/Detalles/obtener/' . $key->id_producto ?>"
+                    class="btn btn-success btn-sm">Detalles</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </table>

@@ -6,9 +6,9 @@ $descripcion = $datos[0]['descripcion']; ?>
 <br>
 <h1>Alamacen - <?php echo $nombreDelAlmacen ?></h1>
 <div class="row">
-    <div class="col-sm-2"><a href="<?php echo base_url() . '/Movimientos/' . $id_almacen . '/ingreso' ?>"><button
+    <div class="col-sm-2"><a href="<?php echo base_url() . '/Movimientos/' . $id_almacen . '/entrada' ?>"><button
                 class="btn btn-primary">Ingresar</button></a></div>
-    <div class="col-sm-2"><a href="<?php echo base_url() . '/Movimientos/' . $id_almacen . '/egreso' ?>"><button
+    <div class="col-sm-2"><a href="<?php echo base_url() . '/Movimientos/' . $id_almacen . '/salida' ?>"><button
                 class="btn btn-success">Salida</button></a></div>
     <div class="col-sm-2"><a href="a"><button class="btn btn-info">sirve</button></a></div>
     <div class="col-sm-2"><a href="a"><button class="btn btn-warning">no sirve</button></a></div>
@@ -42,8 +42,6 @@ $descripcion = $datos[0]['descripcion']; ?>
             <td>
                 <a href="<?php echo base_url() . '/Almacen/obtener/' . $key->id_almacen ?>"
                     class="btn btn-warning btn-sm">Editar</a>
-                <a href="<?php echo base_url() . '/Secciones/' . $key->id_almacen ?>"
-                    class="btn btn-success btn-sm">Secciones</a>
                 <a href="<?php echo base_url() . '/Almacen/eliminar/' . $key->id_almacen ?>"
                     class="btn btn-danger btn-sm">Eliminar</a>
             </td>
