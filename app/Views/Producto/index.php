@@ -25,7 +25,7 @@
 <hr class="dropdown-divider">
 <table class="table  table-hover table-bordered border-dark">
     <tr class="table-dark">
-        <th class="col" >id producto</th>
+        <th class="col">id producto</th>
         <th>Nombre del producto</th>
         <th>Descripcion</th>
         <th>Acciones</th>
@@ -38,8 +38,6 @@
         <td>
             <a href="<?php echo base_url() . '/Producto/obtener/' . $key->id_producto ?>"
                 class="btn btn-warning btn-sm">Editar</a>
-            <a href="<?php echo base_url() . '/Producto/secciones/' . $key->id_producto ?>"
-                class="btn btn-success btn-sm">Reporte</a>
             <a href="<?php echo base_url() . '/Producto/eliminar/' . $key->id_producto ?>"
                 class="btn btn-danger btn-sm">Eliminar</a>
         </td>

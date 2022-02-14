@@ -59,6 +59,9 @@ $routes->get('/Movimientos/obtener/(:any)', 'MovimientosController::obtener/$1')
 $routes->post('/Movimientos/actualizar', 'MovimientosController::actualizar');
 $routes->get('/Movimientos/eliminar/(:any)', 'MovimientosController::eliminar/$1');
 
+$routes->get('/Reportes/(:any)', 'ReportesController::alm/$1');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
