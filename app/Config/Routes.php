@@ -43,7 +43,7 @@ $routes->get('/Almacen/eliminar/(:any)', 'AlmacenController::eliminar/$1');
 
 $routes->get('/Producto', 'ProductoController::index');
 $routes->post('/Producto/crear', 'ProductoController::crear');
-$routes->get('/Producto//(:any)', 'ProductoController::obtener/$1');
+$routes->get('/Producto/obtener/(:any)', 'ProductoController::obtener/$1');
 $routes->post('/Producto/actualizar', 'ProductoController::actualizar');
 $routes->get('/Producto/eliminar/(:any)', 'ProductoController::eliminar/$1');
 

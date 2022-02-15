@@ -17,6 +17,15 @@
                 <input type="text" name="descripcion" id="descripcion" class="form-control">
             </div><br>
             <div>
+                <label for="unidad">Unidad</label>
+                <select class="form-control" id="unidad" name="unidad">
+                    <option value="Unidad">Unidad</option>
+                    <option value="Litros">Litros</option>
+                    <option value="Kilogramo">Kilogramo</option>
+                    <option value="Kilogramo">Metros</option>
+                </select>
+            </div>
+            <div>
                 <button class="btn btn-warning">Guardar</button>
             </div>
         </div>
@@ -28,6 +37,7 @@
         <th class="col">id producto</th>
         <th>Nombre del producto</th>
         <th>Descripcion</th>
+        <th>unidad</th>
         <th>Acciones</th>
     </tr>
     <?php foreach ($datos as $key) : ?>
@@ -35,6 +45,7 @@
         <td><?php echo $key->id_producto ?></td>
         <td><?php echo $key->nombreproducto ?></td>
         <td><?php echo $key->descripcion ?></td>
+        <td><?php echo $key->unidad ?></td>
         <td>
             <a href="<?php echo base_url() . '/Producto/obtener/' . $key->id_producto ?>"
                 class="btn btn-warning btn-sm">Editar</a>
