@@ -25,6 +25,7 @@ class ProductoController extends BaseController
         $datos = [
             "nombreproducto" => $_POST['nombreproducto'],
             "descripcion" => $_POST['descripcion'],
+            "unidad" => $_POST['unidad'],
         ];
 
         $almacen = new ProductoModel();
@@ -42,6 +43,7 @@ class ProductoController extends BaseController
         $datos = [
             "nombreproducto" => $_POST['nombreproducto'],
             "descripcion" => $_POST['descripcion'],
+            "unidad" => $_POST['unidad'],
         ];
 
         $almacen = new ProductoModel();

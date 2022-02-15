@@ -27,6 +27,15 @@ $descripcion = $datos[0]['descripcion'];
                 <input  type="text"
                     name="descripcion" id="descripcion" class="form-control" value="<?php echo $descripcion ?>">
             </div><br>
+            <div>
+                <label for="unidad">Unidad</label>
+                <select class="form-control" id="unidad" name="unidad">
+                    <option value="Unidad">Unidad</option>
+                    <option value="Litros">Litros</option>
+                    <option value="Kilogramo">Kilogramo</option>
+                    <option value="Kilogramo">Metros</option>
+                </select>
+            </div>
         </div>
     </div>
     <button class="btn btn-warning">Guardar</button>
