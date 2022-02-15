@@ -24,16 +24,15 @@ $descripcion = $datos[0]['descripcion'];
             <th>Acciones</th>
         </tr>
         <?php foreach ($dbmov as $key) : ?>
-        <tr>
-            <td><?php echo $key->id_almacen ?></td>
-            <td><?php echo $key->nombreproducto ?></td>
-            <td><?php echo $key->unidad ?></td>
-            <td><?php echo $key->total ?></td>
-            <td>
-                <a href="<?php echo base_url() . '/Detalles/obtener/' . $key->id_producto ?>"
-                    class="btn btn-success btn-sm">Detalles</a>
-            </td>
-        </tr>
+            <tr>
+                <td><?php echo $key->id_almacen ?></td>
+                <td><?php echo $key->nombreproducto ?></td>
+                <td><?php echo $key->unidad ?></td>
+                <td id="total"><?php echo $key->total ?></td>
+                <td>
+                    <a href="<?php echo base_url() . '/Detalles/obtener/' . $key->id_producto ?>" class="btn btn-success btn-sm">Detalles</a>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </table>
 
