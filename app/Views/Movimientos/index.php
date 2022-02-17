@@ -1,11 +1,9 @@
 <?= $this->extend('Layout/menu') ?>
 <?= $this->section('contenido') ?>
 
-<?php $id = 0; ?>
-<?php foreach ($dbsecciones as $key) : ?>
-<?php $id++; ?>
-<?php echo $id; ?>
-<?php endforeach; ?>
+
+<?php $pfecha = date('Y-m-d');?>
+
 
 <?php
 $id_almacen = $datos[0]['id_almacen'];
@@ -27,7 +25,7 @@ $descripcion = $datos[0]['descripcion'];
                     <?php foreach ($dbProductos as $key) : ?>
                     <option onclick="seleccionarTipo(<?php echo $key->id_producto; ?>)"
                         value=<?php echo  $key->id_producto ?>>
-                        <?php echo  $key->nombreproducto ?>
+                        <?php echo  $key->nombreproducto ?> / <?php echo  $key->unidad ?>
                     </option>
                     <?php endforeach; ?>
                 </select>
@@ -53,12 +51,16 @@ $descripcion = $datos[0]['descripcion'];
         </div>
         <div class="col-3">
             <div>
-                <label for="cliente">Cliente</label>
+                <?php if($pmovimiento=='ingreso'){
+                echo '<label for="cliente">Recibido de:</label>';
+            }else{
+                echo '<label for="cliente">entregado a:</label>';
+            } ?>
                 <input type="text" name="cliente" id="cliente" class="form-control">
             </div><br>
         </div>
         <div>
-            <label for="concepto">Concepto</label>
+            <label for="concepto">Observaciones</label>
             <div>
                 <textarea name="concepto" id="concepto" cols="80" rows="5"></textarea>
             </div><br>
@@ -72,7 +74,7 @@ $descripcion = $datos[0]['descripcion'];
         <div class="col-3">
             <div>
                 <label for="fecha">Fecha</label>
-                <input type="date" name="fecha" id="fecha" class="form-control">
+                <input type="date" name="fecha" id="fecha" value=<?php echo $pfecha ?> class="form-control">
             </div><br>
         </div>
         <div>

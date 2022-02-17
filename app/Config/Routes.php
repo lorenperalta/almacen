@@ -39,6 +39,14 @@ $routes->get('/Almacen/obtener/(:any)', 'AlmacenController::obtener/$1');
 $routes->post('/Almacen/actualizar', 'AlmacenController::actualizar');
 $routes->get('/Almacen/eliminar/(:any)', 'AlmacenController::eliminar/$1');
 
+$routes->get('/', 'Home::index');
+$routes->get('/Configuracion', 'UnidadController::index');
+$routes->get('/Almacenes/(:any)', 'UnidadController::alm/$1');
+$routes->post('/Configuracion/crear', 'UnidadController::crear');
+$routes->get('/Configuracion/obtener/(:any)', 'UnidadController::obtener/$1');
+$routes->post('/Configuracion/actualizar', 'UnidadController::actualizar');
+$routes->get('/Configuracion/eliminar/(:any)', 'UnidadController::eliminar/$1');
+
 
 
 $routes->get('/Producto', 'ProductoController::index');
